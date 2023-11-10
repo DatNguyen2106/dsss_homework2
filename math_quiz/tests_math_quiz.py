@@ -13,18 +13,36 @@ class TestMathGame(unittest.TestCase):
             self.assertTrue(min_val <= rand_num <= max_val)
 
     def test_function_B(self):
-        # TODO
-        pass
+        operators = {'+', '-', '*'}
+        for _ in range(1000):  # Test a large number of random values
+            random_operator = function_B()
+            self.assertIn(random_operator, operators)
 
     def test_function_C(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (5, 2, '-', '5 - 2', 3),
+                (5, 2, '*', '5 * 2', 10),
+                (8, 4, '-', '8 - 4', 4),
+                (3, 5, '*', '3 * 5', 15),
+                (6, 4, '+', '6 + 4', 10),
             ]
+
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
                 # TODO
-                pass
+                with self.subTest(num1=num1, num2=num2, operator=operator, expected_problem=expected_problem,
+                    expected_answer=expected_answer):
+                    result = function_C(num1, num2, operator)
+                    # check function for 
+                    if operator in ['+', '-', '*']:
+                        # check if the result from function C is correct or not by comparing with the expected_problem and expected_answer
+                        self.assertEqual(result, (expected_problem, expected_answer),
+                                        f"Expected: {expected_problem} = {expected_answer}, Got: {result[0]} = {result[1]}")
+                    else:
+                        # Handle unsupported operators
+                        self.fail(f"Unsupported operator: {operator} in {expected_problem}")
+                pass    
 
 if __name__ == "__main__":
     unittest.main()
