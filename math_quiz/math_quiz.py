@@ -14,9 +14,7 @@ def generateOperator():
 
 
 def calculation(n1, n2, o):
-    if (not type(n1) is int and not type(n2) is int):
-        raise TypeError("Only integers are allowed")
-    else:
+    if ( type(n1) is int and type(n2) is int):
         p = f"{n1} {o} {n2}"
         # operator '+' for the addition 
         if o == '+': a = n1 + n2
@@ -25,6 +23,10 @@ def calculation(n1, n2, o):
         # operator '*' for the multiplication
         else: a = n1 * n2
         return p, a
+
+    else:
+    # check for type(n1) is int and type(n2) is int
+        raise TypeError("Invalid number type")
 
 def math_quiz():
     s = 0
