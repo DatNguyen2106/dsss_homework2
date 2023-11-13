@@ -14,11 +14,8 @@ class TestMathGame(unittest.TestCase):
     def test_generateOperator(self):
         operators = {'+', '-', '*'}
         for _ in range(1000):  # Test a large number of random values
-<<<<<<< HEAD
             random_operator = generateOperator()
-=======
             random_operator = function_B()
->>>>>>> main
             # used in unit testing to check whether a string is contained in other or not
             self.assertIn(random_operator, operators)
 
@@ -37,11 +34,7 @@ class TestMathGame(unittest.TestCase):
                 # TODO
                 with self.subTest(num1=num1, num2=num2, operator=operator, expected_problem=expected_problem,
                     expected_answer=expected_answer):
-<<<<<<< HEAD
                     result = calculation(num1, num2, operator)
-=======
-                    result = function_C(num1, num2, operator)
->>>>>>> main
                     # check function for operator '+' , '-', '*'
                     if operator in ['+', '-', '*']:
                         # check if the result from function C is correct or not by comparing with the expected_problem and expected_answer
