@@ -15,7 +15,6 @@ class TestMathGame(unittest.TestCase):
         operators = {'+', '-', '*'}
         for _ in range(1000):  # Test a large number of random values
             random_operator = generateOperator()
-            random_operator = function_B()
             # used in unit testing to check whether a string is contained in other or not
             self.assertIn(random_operator, operators)
 
